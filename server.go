@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -42,7 +43,7 @@ func main() {
 	dbbool = dbpool
     */
 
-    fmt.Fprintf("Hello world!")
+    fmt.Fprintf(os.Stderr, "Hello world!")
     http.HandleFunc("/handler", handler)
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
